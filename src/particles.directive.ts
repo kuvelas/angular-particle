@@ -21,7 +21,7 @@ export class ParticlesDirective implements AfterViewInit, OnDestroy  {
         if (!this._canvasManager) {
             return;
         }
-        this._canvasManager.cancelAnimation();
+        this._canvasManager.destroy();
     }
 
     ngAfterViewInit(): void {

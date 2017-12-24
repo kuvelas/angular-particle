@@ -18,6 +18,11 @@ export class CanvasManager {
         particles.line_linked.color_rgb_line = hexToRgb(particles.line_linked.color);
     }
 
+	public destroy(){
+		this.cancelAnimation();
+		window.removeEventListener('resize', this._onWindowResize);
+	}
+
     public cancelAnimation(): void {
         if (!this._tmpParams.drawAnimFrame) {
             return;
